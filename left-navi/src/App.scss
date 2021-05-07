@@ -137,6 +137,8 @@ $borderColor: #e6e6e6;
                 &.selected {
                   background-color: $selectedColor;
                   box-shadow: inset 7px 0 $primaryColor;
+                  color: white;
+                  font-weight: bold;
                 }
                 &:hover {
                   background-color: $secondaryColor;
