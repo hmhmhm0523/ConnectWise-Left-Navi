@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/ConnectWise-Left-Navi/static/css/main.9d5b29c0.chunk.css",
-    "main.js": "/ConnectWise-Left-Navi/static/js/main.210d123f.chunk.js",
-    "main.js.map": "/ConnectWise-Left-Navi/static/js/main.210d123f.chunk.js.map",
-    "runtime-main.js": "/ConnectWise-Left-Navi/static/js/runtime-main.24d7a8d4.js",
-    "runtime-main.js.map": "/ConnectWise-Left-Navi/static/js/runtime-main.24d7a8d4.js.map",
-    "static/js/2.f7fd385d.chunk.js": "/ConnectWise-Left-Navi/static/js/2.f7fd385d.chunk.js",
-    "static/js/2.f7fd385d.chunk.js.map": "/ConnectWise-Left-Navi/static/js/2.f7fd385d.chunk.js.map",
-    "static/js/3.29ba684f.chunk.js": "/ConnectWise-Left-Navi/static/js/3.29ba684f.chunk.js",
-    "static/js/3.29ba684f.chunk.js.map": "/ConnectWise-Left-Navi/static/js/3.29ba684f.chunk.js.map",
+    "main.css": "/ConnectWise-Left-Navi/static/css/main.538eb7d5.chunk.css",
+    "main.js": "/ConnectWise-Left-Navi/static/js/main.5dc5486b.chunk.js",
+    "main.js.map": "/ConnectWise-Left-Navi/static/js/main.5dc5486b.chunk.js.map",
+    "runtime-main.js": "/ConnectWise-Left-Navi/static/js/runtime-main.a26a0788.js",
+    "runtime-main.js.map": "/ConnectWise-Left-Navi/static/js/runtime-main.a26a0788.js.map",
+    "static/js/2.a61f4799.chunk.js": "/ConnectWise-Left-Navi/static/js/2.a61f4799.chunk.js",
+    "static/js/2.a61f4799.chunk.js.map": "/ConnectWise-Left-Navi/static/js/2.a61f4799.chunk.js.map",
+    "static/js/3.eb4d199a.chunk.js": "/ConnectWise-Left-Navi/static/js/3.eb4d199a.chunk.js",
+    "static/js/3.eb4d199a.chunk.js.map": "/ConnectWise-Left-Navi/static/js/3.eb4d199a.chunk.js.map",
     "index.html": "/ConnectWise-Left-Navi/index.html",
-    "static/css/main.9d5b29c0.chunk.css.map": "/ConnectWise-Left-Navi/static/css/main.9d5b29c0.chunk.css.map",
-    "static/js/2.f7fd385d.chunk.js.LICENSE.txt": "/ConnectWise-Left-Navi/static/js/2.f7fd385d.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/ConnectWise-Left-Navi/static/media/logo.6ce24c58.svg"
+    "static/css/main.538eb7d5.chunk.css.map": "/ConnectWise-Left-Navi/static/css/main.538eb7d5.chunk.css.map",
+    "static/js/2.a61f4799.chunk.js.LICENSE.txt": "/ConnectWise-Left-Navi/static/js/2.a61f4799.chunk.js.LICENSE.txt",
+    "static/media/App.scss": "/ConnectWise-Left-Navi/static/media/contentPanel.e8690cb1.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.24d7a8d4.js",
-    "static/js/2.f7fd385d.chunk.js",
-    "static/css/main.9d5b29c0.chunk.css",
-    "static/js/main.210d123f.chunk.js"
+    "static/js/runtime-main.a26a0788.js",
+    "static/js/2.a61f4799.chunk.js",
+    "static/css/main.538eb7d5.chunk.css",
+    "static/js/main.5dc5486b.chunk.js"
   ]
 }
