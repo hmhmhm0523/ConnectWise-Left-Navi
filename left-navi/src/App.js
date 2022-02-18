@@ -12,6 +12,27 @@ function App() {
     setDeviceActive(!isDeviceActive);
   };
 
+  const handleExpandDeviceOnHover = () => {
+    if (isCollapse) {
+      setAutomationActive(false)
+      setDeviceActive(true);
+    }
+  };
+
+  const handleExpandAutomationOnHover = () => {
+    if (isCollapse) {
+      setAutomationActive(true)
+      setDeviceActive(false);
+    }
+  };
+
+  const handleCollapseAllOnHover = () => {
+    if (isCollapse) {
+      setAutomationActive(false)
+      setDeviceActive(false);
+    }
+  }
+
   const handleToggleAutomationActive = () => {
     setAutomationActive(!isAutomationActive);
   };
@@ -42,12 +63,12 @@ function App() {
           </div>
           <div className='navigationContainer'>
             <div className='group'>
-              <h4>Workspace</h4>
+              {/* <h4>Workspace</h4> */}
               <div className={`level1 hasChild ${isDeviceActive ? "expanded" : ""}`}>
-                <div className='level1Item'>
+                <div className='level1Item selected' onClick={handleToggleDeviceActive} onMouseEnter={handleExpandDeviceOnHover}>
                   <div className='deviceIcon icon'></div>
                   <span>Devices</span>
-                  <div onClick={handleToggleDeviceActive} className='chevronIcon icon'></div>
+                  <div className='chevronIcon icon'></div>
                 </div>
                 <ul className='level1Children'>
                   <li className='level2Item selected'>Workstations & Servers</li>
@@ -55,10 +76,10 @@ function App() {
                 </ul>
               </div>
               <div className={`level1 hasChild ${isAutomationActive ? "expanded" : ""}`}>
-                <div className='level1Item'>
+                <div className='level1Item' onClick={handleToggleAutomationActive} onMouseEnter={handleExpandAutomationOnHover}>
                   <div className='automationIcon icon'></div>
                   <span>Automation</span>
-                  <div onClick={handleToggleAutomationActive} className='chevronIcon icon'></div>
+                  <div className='chevronIcon icon'></div>
                 </div>
                 <ul className='level1Children'>
                   <li className='level2Item'>Tasks</li>
@@ -66,31 +87,31 @@ function App() {
                 </ul>
               </div>
 
-              <div className='level1' ><div className='level1Item'><div className='alertIcon icon'></div><span>Alert Management</span></div></div>
-              <div className='level1' ><div className='level1Item'><div className='reportingIcon icon'></div><span>Reporting</span></div></div>
-              <div className='level1' ><div className='level1Item'><div className='integrationsIcon icon'></div><span>Integration</span></div></div>
+              <div className='level1' ><div className='level1Item' onMouseEnter={handleCollapseAllOnHover}><div className='alertIcon icon'></div><span>Alert Management</span></div></div>
+              <div className='level1' ><div className='level1Item' onMouseEnter={handleCollapseAllOnHover}><div className='reportingIcon icon'></div><span>Reporting</span></div></div>
+              <div className='level1' ><div className='level1Item' onMouseEnter={handleCollapseAllOnHover}><div className='integrationsIcon icon'></div><span>Integration</span></div></div>
 
 
             </div>
 
             <div className='group'>
-              <h4>Settings</h4>
-              <div className='level1' ><div className='level1Item'><div className='elementsIcon icon'></div><span>Elements</span></div></div>
-              <div className='level1' ><div className='level1Item'><div className='packagesIcon icon'></div><span>Packages</span></div></div>
-              <div className='level1' ><div className='level1Item'><div className='policiesIcon icon'></div><span>Policies</span></div></div>
+              {/* <h4>Settings</h4> */}
+              <div className='level1' ><div className='level1Item' onMouseEnter={handleCollapseAllOnHover}><div className='elementsIcon icon'></div><span>Elements</span></div></div>
+              <div className='level1' ><div className='level1Item' onMouseEnter={handleCollapseAllOnHover}><div className='packagesIcon icon'></div><span>Packages</span></div></div>
+              <div className='level1' ><div className='level1Item' onMouseEnter={handleCollapseAllOnHover}><div className='policiesIcon icon'></div><span>Policies</span></div></div>
             </div>
 
             <div className='group'>
-              <h4>Classic</h4>
-              <div className='level1' ><div className='level1Item'><div className='dashboardIcon icon'></div><span>Dashboard</span></div></div>
-              <div className='level1' ><div className='level1Item'><div className='quickAccessIcon icon'></div><span>Quick Access</span></div></div>
-              <div className='level1' ><div className='level1Item'><div className='patchesIcon icon'></div><span>Patches</span></div></div>
-              <div className='level1' ><div className='level1Item'><div className='scriptsIcon icon'></div><span>Scripts</span></div></div>
-              <div className='level1' ><div className='level1Item'><div className='reportsIcon icon'></div><span>Reports</span></div></div>
-              <div className='level1' ><div className='level1Item'><div className='adminIcon icon'></div><span>Admin</span></div></div>
-              <div className='level1' ><div className='level1Item'><div className='rmmSetupIcon icon'></div><span>RMM Setup</span></div></div>
-              <div className='level1' ><div className='level1Item'><div className='bdrIcon icon'></div><span>BDR</span></div></div>
-              <div className='level1' ><div className='level1Item'><div className='securityIcon icon'></div><span>Security</span></div></div>
+              {/* <h4>Classic</h4> */}
+              <div className='level1' ><div className='level1Item' onMouseEnter={handleCollapseAllOnHover}><div className='dashboardIcon icon'></div><span>Dashboard</span></div></div>
+              <div className='level1' ><div className='level1Item' onMouseEnter={handleCollapseAllOnHover}><div className='quickAccessIcon icon'></div><span>Quick Access</span></div></div>
+              <div className='level1' ><div className='level1Item' onMouseEnter={handleCollapseAllOnHover}><div className='patchesIcon icon'></div><span>Patches</span></div></div>
+              <div className='level1' ><div className='level1Item' onMouseEnter={handleCollapseAllOnHover}><div className='scriptsIcon icon'></div><span>Scripts</span></div></div>
+              <div className='level1' ><div className='level1Item' onMouseEnter={handleCollapseAllOnHover}><div className='reportsIcon icon'></div><span>Reports</span></div></div>
+              <div className='level1' ><div className='level1Item' onMouseEnter={handleCollapseAllOnHover}><div className='adminIcon icon'></div><span>Admin</span></div></div>
+              <div className='level1' ><div className='level1Item' onMouseEnter={handleCollapseAllOnHover}><div className='rmmSetupIcon icon'></div><span>RMM Setup</span></div></div>
+              <div className='level1' ><div className='level1Item' onMouseEnter={handleCollapseAllOnHover}><div className='bdrIcon icon'></div><span>BDR</span></div></div>
+              <div className='level1' ><div className='level1Item' onMouseEnter={handleCollapseAllOnHover}><div className='securityIcon icon'></div><span>Security</span></div></div>
             </div>
 
           </div>

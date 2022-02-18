@@ -21,7 +21,7 @@ $borderColor: #e6e6e6;
     display: flex;
     align-items: center;
     .logo {
-      background-image: url(connectWiseLogo.png);
+      background-image: url(img/NewLogo.png);
       width: 200px;
       height: 30px;
       margin: 15px 15px 15px 25px;
@@ -89,7 +89,7 @@ $borderColor: #e6e6e6;
         }
       }
       .navigationContainer {
-        color: #E6E6E6;
+        color: #e6e6e6;
         .group {
           border-top: 1px solid $secondaryColor;
           > * {
@@ -100,7 +100,7 @@ $borderColor: #e6e6e6;
           h4 {
             margin: 0;
             padding: 0 24px;
-            color: #E6E6E6;
+            color: #e6e6e6;
             text-transform: uppercase;
             font-weight: bold;
           }
@@ -116,6 +116,13 @@ $borderColor: #e6e6e6;
             }
             .level1Item {
               padding: 0 24px;
+              cursor: pointer;
+
+              &.selected {
+                background-color: $selectedColor !important;
+                color: white;
+                font-weight: bold;
+              }
               &:hover {
                 background-color: $secondaryColor;
               }
@@ -133,9 +140,10 @@ $borderColor: #e6e6e6;
               padding: 0;
 
               .level2Item {
+                cursor: pointer;
                 padding-left: 72px;
                 &.selected {
-                  background-color: $selectedColor;
+                  background-color: $selectedColor !important;
                   box-shadow: inset 7px 0 $primaryColor;
                   color: white;
                   font-weight: bold;
@@ -214,7 +222,7 @@ $borderColor: #e6e6e6;
     background-image: url(img/Automation.svg);
   }
   &.alertIcon {
-    background-image: url('img/Alert Management.svg');
+    background-image: url("img/Alert Management.svg");
   }
   &.reportingIcon {
     background-image: url(img/Reports.svg);
@@ -235,7 +243,7 @@ $borderColor: #e6e6e6;
     background-image: url(img/Dashboard.svg);
   }
   &.quickAccessIcon {
-    background-image: url('img/Quick Access.svg');
+    background-image: url("img/Quick Access.svg");
   }
   &.patchesIcon {
     background-image: url(img/Patching.svg);
@@ -247,7 +255,7 @@ $borderColor: #e6e6e6;
     background-image: url(img/Reports.svg);
   }
   &.adminIcon {
-    background-image: url('img/Business Profile.svg');
+    background-image: url("img/Business Profile.svg");
   }
   &.rmmSetupIcon {
     background-image: url(img/RMM.svg);
