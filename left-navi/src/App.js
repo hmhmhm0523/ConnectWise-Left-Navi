@@ -3,31 +3,31 @@ import './App.scss';
 
 function App() {
 
-  const [isDeviceActive, setDeviceActive] = useState("false");
-  const [isAutomationActive, setAutomationActive] = useState("false");
-  const [isCollapse, setCollapse] = useState("false");
-  const [isPined, setPined] = useState("false");
+  const [isDeviceActive, setDeviceActive] = useState(false);
+  const [isAutomationActive, setAutomationActive] = useState(false);
+  const [isCollapsed, setCollapsed] = useState(true);
+  const [isPined, setPined] = useState(false);
 
   const handleToggleDeviceActive = () => {
     setDeviceActive(!isDeviceActive);
   };
 
   const handleExpandDeviceOnHover = () => {
-    if (isCollapse) {
+    if (isCollapsed) {
       setAutomationActive(false)
       setDeviceActive(true);
     }
   };
 
   const handleExpandAutomationOnHover = () => {
-    if (isCollapse) {
+    if (isCollapsed) {
       setAutomationActive(true)
       setDeviceActive(false);
     }
   };
 
   const handleCollapseAllOnHover = () => {
-    if (isCollapse) {
+    if (isCollapsed) {
       setAutomationActive(false)
       setDeviceActive(false);
     }
@@ -38,7 +38,7 @@ function App() {
   };
 
   const handleToggleCollapse = () => {
-    setCollapse(!isCollapse);
+    setCollapsed(!isCollapsed);
   };
 
   const handleTogglePined = () => {
@@ -53,11 +53,11 @@ function App() {
         <div className='profile'></div>
       </div>
       <div className='contentPanel'>
-        <div className={`leftNavi ${isCollapse ? "collapsed" : ""}`}
-          onMouseEnter={() => isPined ? '' : setCollapse(false)}
-          onMouseLeave={() => isPined ? '' : setCollapse(true)}>
+        <div className={`leftNavi ${isCollapsed ? "collapsed" : ""}`}
+          onMouseEnter={() => isPined ? '' : setCollapsed(false)}
+          onMouseLeave={() => isPined ? '' : setCollapsed(true)}>
           <div className='topBar'>
-            <div onClick={handleToggleCollapse} className={`icon ${isCollapse ? 'rightArrow' : 'leftArrow'}`}></div>
+            <div onClick={handleToggleCollapse} className={`icon ${isCollapsed ? 'rightArrow' : 'leftArrow'}`}></div>
             <div className='flexSpacer'></div>
             <div onClick={handleTogglePined} className={`pinButton icon ${isPined ? 'pined' : ''}`}></div>
           </div>
@@ -75,6 +75,12 @@ function App() {
                   <li className='level2Item'>Device Groups</li>
                 </ul>
               </div>
+              
+
+              <div className='level1' ><div className='level1Item' onMouseEnter={handleCollapseAllOnHover}><div className='alertIcon icon'></div><span>Alert Management</span></div></div>
+              <div className='level1' ><div className='level1Item' onMouseEnter={handleCollapseAllOnHover}><div className='reportingIcon icon'></div><span>Reporting</span></div></div>
+              <div className='level1' ><div className='level1Item' onMouseEnter={handleCollapseAllOnHover}><div className='integrationsIcon icon'></div><span>Integration</span></div></div>
+
               <div className={`level1 hasChild ${isAutomationActive ? "expanded" : ""}`}>
                 <div className='level1Item' onClick={handleToggleAutomationActive} onMouseEnter={handleExpandAutomationOnHover}>
                   <div className='automationIcon icon'></div>
@@ -86,12 +92,6 @@ function App() {
                   <li className='level2Item'>Scheduled Tasks</li>
                 </ul>
               </div>
-
-              <div className='level1' ><div className='level1Item' onMouseEnter={handleCollapseAllOnHover}><div className='alertIcon icon'></div><span>Alert Management</span></div></div>
-              <div className='level1' ><div className='level1Item' onMouseEnter={handleCollapseAllOnHover}><div className='reportingIcon icon'></div><span>Reporting</span></div></div>
-              <div className='level1' ><div className='level1Item' onMouseEnter={handleCollapseAllOnHover}><div className='integrationsIcon icon'></div><span>Integration</span></div></div>
-
-
             </div>
 
             <div className='group'>
@@ -116,7 +116,7 @@ function App() {
 
           </div>
         </div>
-        <div className={`table ${isPined ? 'pined' : ''} ${isCollapse ? 'collapsed' : ''}`}>
+        <div className={`table ${isPined ? 'pined' : ''} ${isCollapsed ? 'collapsed' : ''}`}>
         </div>
         <div className='toolbar'>
           <div className='iconCircle'></div>
