@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ConnectWise-Left-Navi/static/css/main.4a87e7a1.chunk.css",
-    "main.js": "/ConnectWise-Left-Navi/static/js/main.b1016825.chunk.js",
-    "main.js.map": "/ConnectWise-Left-Navi/static/js/main.b1016825.chunk.js.map",
+    "main.js": "/ConnectWise-Left-Navi/static/js/main.7a3b6ba7.chunk.js",
+    "main.js.map": "/ConnectWise-Left-Navi/static/js/main.7a3b6ba7.chunk.js.map",
     "runtime-main.js": "/ConnectWise-Left-Navi/static/js/runtime-main.a26a0788.js",
     "runtime-main.js.map": "/ConnectWise-Left-Navi/static/js/runtime-main.a26a0788.js.map",
     "static/js/2.a61f4799.chunk.js": "/ConnectWise-Left-Navi/static/js/2.a61f4799.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.a26a0788.js",
     "static/js/2.a61f4799.chunk.js",
     "static/css/main.4a87e7a1.chunk.css",
-    "static/js/main.b1016825.chunk.js"
+    "static/js/main.7a3b6ba7.chunk.js"
   ]
 }
