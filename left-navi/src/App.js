@@ -64,7 +64,7 @@ function App() {
           <div className='navigationContainer'>
             <div className='group'>
               {/* <h4>Workspace</h4> */}
-              <div className={`level1 hasChild ${isDeviceActive ? "expanded" : ""}`}>
+              <div className={`level1 hasChild ${isDeviceActive && (!isCollapsed) ? "expanded" : ""}`}>
                 <div className='level1Item selected' onClick={handleToggleDeviceActive} onMouseEnter={handleExpandDeviceOnHover}>
                   <div className='deviceIcon icon'></div>
                   <span>Devices</span>
