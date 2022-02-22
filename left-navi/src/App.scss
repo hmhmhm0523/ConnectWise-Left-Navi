@@ -55,12 +55,15 @@ $borderColor: #e6e6e6;
 
       &.collapsed {
         width: 72px;
-        transition: width 0.15s;
+        transition: 0.2s;
         h4,
         .level2Item,
         .level1Children,
         .pinButton {
-          display: none;
+          transition: 0;
+          opacity: 0;
+          visibility: hidden;
+          max-height: 0;
         }
       }
 
@@ -107,7 +110,10 @@ $borderColor: #e6e6e6;
           .level1 {
             &.expanded {
               .level1Children {
-                display: block;
+                transition: 0.2s;
+                opacity: 1;
+                max-height: 300px;
+                visibility: visible;
               }
 
               .chevronIcon {
@@ -117,6 +123,7 @@ $borderColor: #e6e6e6;
             .level1Item {
               padding: 0 24px;
               cursor: pointer;
+              white-space: nowrap;
 
               &.selected {
                 background-color: $selectedColor !important;
@@ -134,7 +141,10 @@ $borderColor: #e6e6e6;
               }
             }
             .level1Children {
-              display: none;
+              transition: 0;
+              opacity: 0;
+              visibility: hidden;
+              max-height: 0;
               margin: 0;
               list-style-type: none;
               padding: 0;
@@ -142,6 +152,8 @@ $borderColor: #e6e6e6;
               .level2Item {
                 cursor: pointer;
                 padding-left: 72px;
+                white-space: nowrap;
+
                 &.selected {
                   background-color: $selectedColor !important;
                   box-shadow: inset 7px 0 $primaryColor;
