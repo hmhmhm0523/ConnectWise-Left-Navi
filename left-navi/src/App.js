@@ -81,7 +81,7 @@ function App() {
               <div className='level1' ><div className='level1Item' onMouseEnter={handleCollapseAllOnHover}><div className='reportingIcon icon'></div><span>Reporting</span></div></div>
               <div className='level1' ><div className='level1Item' onMouseEnter={handleCollapseAllOnHover}><div className='integrationsIcon icon'></div><span>Integration</span></div></div>
 
-              <div className={`level1 hasChild ${isAutomationActive ? "expanded" : ""}`}>
+              <div className={`level1 hasChild ${isAutomationActive && (!isCollapsed)  ? "expanded" : ""}`}>
                 <div className='level1Item' onClick={handleToggleAutomationActive} onMouseEnter={handleExpandAutomationOnHover}>
                   <div className='automationIcon icon'></div>
                   <span>Automation</span>
