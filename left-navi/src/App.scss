@@ -1,7 +1,28 @@
-$primaryColor: #026ccf;
-$secondaryColor: #3489d8;
-$selectedColor: #014b90;
-$borderColor: #e6e6e6;
+// $primaryColor: #026ccf;
+// $secondaryColor: #3489d8;
+// $selectedColor: #014b90;
+
+
+$primaryColor: #141F51;
+$secondaryColor: #22326E;
+$selectedColor: #22326E;
+$borderColor: #E6E6E6;
+$verticalLineColor: #E6E6E6;
+
+$naviBarWidth: 300px;
+$naviBarItemHeight: 40px;
+
+::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+::-webkit-scrollbar-track {
+  // background: orange;        /* color of the tracking area */
+}
+::-webkit-scrollbar-thumb {
+  background-color: #cccccc; /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid $primaryColor; /* creates padding around scroll thumb */
+}
 
 .App {
   width: 100%;
@@ -13,6 +34,7 @@ $borderColor: #e6e6e6;
 
   * {
     user-select: none;
+    box-sizing: border-box;
   }
   .header {
     height: 60px;
@@ -38,16 +60,17 @@ $borderColor: #e6e6e6;
   }
   .contentPanel {
     display: flex;
-    height: 100%;
+    height: calc(100% - 61px);
     flex-grow: 1;
     position: relative;
 
     .leftNavi {
       background-color: $primaryColor;
       transition: 0.2s;
-      width: 250px;
+      width: $naviBarWidth;
       overflow-x: hidden;
       z-index: 100;
+      position: relative;
 
       * {
         flex-shrink: 0;
@@ -56,9 +79,14 @@ $borderColor: #e6e6e6;
       &.collapsed {
         width: 72px;
         transition: 0.2s;
+
+        .navigationContainer {
+          overflow: hidden;
+        }
         h4,
         .level2Item,
         .level1Children,
+        .level2Children,
         .pinButton {
           transition: 0;
           opacity: 0;
@@ -66,12 +94,18 @@ $borderColor: #e6e6e6;
           max-height: 0;
         }
       }
-
       .topBar {
         padding: 0 24px;
-        height: 40px;
+        height: $naviBarItemHeight;
         display: flex;
         align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: $primaryColor;
+        z-index: 1;
+        border-bottom: 1px solid $secondaryColor;
 
         .leftArrow {
           background-image: url(img/Back.svg);
@@ -93,10 +127,18 @@ $borderColor: #e6e6e6;
       }
       .navigationContainer {
         color: #e6e6e6;
+        position: absolute;
+        top: $naviBarItemHeight;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 8px 0 24px 0;
+
         .group {
-          border-top: 1px solid $secondaryColor;
           > * {
-            line-height: 40px;
+            line-height: $naviBarItemHeight;
 
             font-size: 14px;
           }
@@ -112,7 +154,7 @@ $borderColor: #e6e6e6;
               .level1Children {
                 transition: 0.2s;
                 opacity: 1;
-                max-height: 300px;
+                max-height: 600px;
                 visibility: visible;
               }
 
@@ -121,14 +163,19 @@ $borderColor: #e6e6e6;
               }
             }
             .level1Item {
-              padding: 0 24px;
+              padding: 0 16px;
               cursor: pointer;
               white-space: nowrap;
+              margin: 2px 8px;
+              border-radius: 4px;
 
               &.selected {
                 background-color: $selectedColor !important;
                 color: white;
                 font-weight: bold;
+                .icon{
+                  fill: white;
+                }
               }
               &:hover {
                 background-color: $secondaryColor;
@@ -148,15 +195,68 @@ $borderColor: #e6e6e6;
               margin: 0;
               list-style-type: none;
               padding: 0;
+              background-image: linear-gradient(to right, transparent 97%, $verticalLineColor 3%);
+              background-size: 36px 100%;
+              background-repeat: no-repeat;
+
+              .level2 {
+                &.expanded {
+                  .level2Children {
+                    transition: 0.2s;
+                    opacity: 1;
+                    max-height: 300px;
+                    visibility: visible;
+                  }
+
+                  .chevronIcon {
+                    transform: rotate(0deg);
+                  }
+                }
+              }
 
               .level2Item {
                 cursor: pointer;
-                padding-left: 72px;
+                padding: 0 16px;
                 white-space: nowrap;
+                margin: 2px 8px 2px 56px;
+                border-radius: 4px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
 
                 &.selected {
                   background-color: $selectedColor !important;
-                  box-shadow: inset 7px 0 $primaryColor;
+                  color: white;
+                  font-weight: bold;
+                }
+                &:hover {
+                  background-color: $secondaryColor;
+                }
+              }
+            }
+
+            .level2Children {
+              transition: 0;
+              opacity: 0;
+              visibility: hidden;
+              max-height: 0;
+              margin: 0;
+              list-style-type: none;
+              padding: 0;
+              background-image: linear-gradient(to right, transparent 97%, $verticalLineColor 3%);
+              background-size: 36px 100%;
+              background-position: 44px;
+              background-repeat: no-repeat;
+
+              .level3Item {
+                cursor: pointer;
+                padding-left: 16px;
+                white-space: nowrap;
+                margin: 2px 8px 2px 96px;
+                border-radius: 4px;
+
+                &.selected {
+                  background-color: $selectedColor !important;
                   color: white;
                   font-weight: bold;
                 }
@@ -181,7 +281,7 @@ $borderColor: #e6e6e6;
       background-repeat: no-repeat;
 
       &.pined {
-        left: 250px;
+        left: $naviBarWidth;
         &.collapsed {
           left: 72px;
         }
