@@ -80,13 +80,13 @@ function App() {
 
             <div className='group'>
               <div className={`level1 hasChild ${isDeviceActive && (!isCollapsed) ? "expanded" : ""}`} onMouseEnter={handleExpandDeviceOnHover}>
-                <div className='level1Item selected' onClick={handleToggleDeviceActive} >
+                <div className='level1Item' onClick={handleToggleDeviceActive} >
                   <div className='deviceIcon icon'></div>
                   <span>Devices</span>
                   <div className='chevronIcon icon'></div>
                 </div>
                 <ul className='level1Children'>
-                  <li className='level2Item selected'>Computers</li>
+                  <li className='level2Item'>Computers</li>
                   <li className='level2Item'>Mobile</li>
                   <li className='level2Item'>Device Groups</li>
                   <li className='level2Item'>Communicator</li>
@@ -100,20 +100,20 @@ function App() {
               <div className='level1' onMouseEnter={handleCollapseAllOnHover} ><div className='level1Item' ><div className='integrationsIcon icon'></div><span>Integration</span></div></div>
 
               <div className={`level1 hasChild ${isRMMToolsActive && (!isCollapsed) ? "expanded" : ""}`} onMouseEnter={handleExpandRMMToolsOnHover}>
-                <div className='level1Item' onClick={handleToggleRMMToolsActive}>
+                <div className='level1Item selected' onClick={handleToggleRMMToolsActive}>
                   <div className='automationIcon icon'></div>
                   <span>RMM Tools</span>
                   <div className='chevronIcon icon'></div>
                 </div>
                 <ul className='level1Children'>
                   <li className={`level2 hasChild ${isAutomationActive && (!isCollapsed) ? "expanded" : ""}`}>
-                    <li className='level2Item' onClick={handleToggleAutomationActive}>
+                    <li className='level2Item selected' onClick={handleToggleAutomationActive}>
                       <span>Automation</span>
                       <div className='chevronIcon icon'></div>
                     </li>
                     <ul className='level2Children'>
                       <li className='level3Item'>Tasks</li>
-                      <li className='level3Item'>Scheduled Tasks</li>
+                      <li className='level3Item selected'>Scheduled Tasks</li>
                     </ul>
                   </li>
 

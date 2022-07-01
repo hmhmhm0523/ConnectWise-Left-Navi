@@ -1,14 +1,13 @@
-// $primaryColor: #026ccf;
-// $secondaryColor: #3489d8;
+// $backgroundColor: #026ccf;
+// $hoverColor: #3489d8;
 // $selectedColor: #014b90;
+$backgroundColor: #333333; // Grey500
+$hoverColor: #666666; // Grey 400
+$selectedColor: #026CCF;
 
 
-$primaryColor: #141F51;
-$secondaryColor: #22326E;
-$selectedColor: #22326E;
 $borderColor: #E6E6E6;
-$verticalLineColor: #E6E6E6;
-
+$verticalLineColor: #7d7d7d;
 $naviBarWidth: 300px;
 $naviBarItemHeight: 40px;
 
@@ -21,7 +20,7 @@ $naviBarItemHeight: 40px;
 ::-webkit-scrollbar-thumb {
   background-color: #cccccc; /* color of the scroll thumb */
   border-radius: 20px; /* roundness of the scroll thumb */
-  border: 3px solid $primaryColor; /* creates padding around scroll thumb */
+  border: 3px solid $backgroundColor; /* creates padding around scroll thumb */
 }
 
 .App {
@@ -65,7 +64,7 @@ $naviBarItemHeight: 40px;
     position: relative;
 
     .leftNavi {
-      background-color: $primaryColor;
+      background-color: $backgroundColor;
       transition: 0.2s;
       width: $naviBarWidth;
       overflow-x: hidden;
@@ -103,9 +102,9 @@ $naviBarItemHeight: 40px;
         top: 0;
         left: 0;
         right: 0;
-        background-color: $primaryColor;
+        background-color: $backgroundColor;
         z-index: 1;
-        border-bottom: 1px solid $secondaryColor;
+        border-bottom: 1px solid $hoverColor;
 
         .leftArrow {
           background-image: url(img/Back.svg);
@@ -170,7 +169,7 @@ $naviBarItemHeight: 40px;
               border-radius: 4px;
 
               &.selected {
-                background-color: $selectedColor !important;
+                background-color: $hoverColor !important;
                 color: white;
                 font-weight: bold;
                 .icon{
@@ -178,7 +177,7 @@ $naviBarItemHeight: 40px;
                 }
               }
               &:hover {
-                background-color: $secondaryColor;
+                background-color: $hoverColor;
               }
               display: flex;
               align-items: center;
@@ -225,12 +224,12 @@ $naviBarItemHeight: 40px;
                 justify-content: space-between;
 
                 &.selected {
-                  background-color: $selectedColor !important;
+                  background-color: $hoverColor !important;
                   color: white;
                   font-weight: bold;
                 }
                 &:hover {
-                  background-color: $secondaryColor;
+                  background-color: $hoverColor;
                 }
               }
             }
@@ -261,7 +260,7 @@ $naviBarItemHeight: 40px;
                   font-weight: bold;
                 }
                 &:hover {
-                  background-color: $secondaryColor;
+                  background-color: $hoverColor;
                 }
               }
             }
